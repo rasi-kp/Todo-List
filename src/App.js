@@ -5,6 +5,9 @@ import { useState } from 'react';
 function App() {
   const [toDos,setTodos]=useState([])
   const [todo,settodo]=useState('')
+  const handleDelete=(id)=>{
+    setTodos(toDos.filter((todo)=>todo.id!=id))
+  }
   return (
     <div className="app">
       <div className="mainHeading">
@@ -35,7 +38,7 @@ function App() {
             <p>{value.text}</p>
           </div>
           <div className="right">
-            <i className="fas fa-times"></i>
+            <i onClick={() => handleDelete(value.id)} className="fas fa-times"></i>
           </div>
         </div> )
       }) }
