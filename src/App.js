@@ -8,6 +8,7 @@ function App() {
   const handleDelete = (id) => {
     setTodos(toDos.filter((todo) => todo.id != id))
   }
+  //add component
   const click=(e,value)=>{
       setTodos(toDos.filter(val => {
         if (val.id === value.id) {
